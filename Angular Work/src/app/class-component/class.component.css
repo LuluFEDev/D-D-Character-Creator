@@ -1,0 +1,23 @@
+#itemProfsHeader, #saveThrowProfsHeader,
+#skillProfsHeader, #levelSelect,
+#levelSelectHeader, #divineDomainSelect,
+#primalPathSelect
+{
+    display: none;
+}
+
+.col-md-6
+{
+    display: inline-flex;
+    margin-bottom: 2%;
+}
+
+#classSelect
+{
+    margin-top: 2%;
+}
+
+#numberOfSkillsSpan
+{
+    display: none;
+}

@@ -1,0 +1,16 @@
+#backgroundSkillProfsHeader, #backgroundToolProfsHeader, 
+#backgroundLanguagesHeader, #backgroundItemsHeader
+{
+    display : none;
+}
+
+.col-md-6
+{
+    display: inline-flex;
+    margin-bottom: 2%;
+}
+
+#backgroundSelect
+{
+    margin-top: 2%;
+}

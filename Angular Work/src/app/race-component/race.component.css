@@ -1,0 +1,27 @@
+#subDwarfSelect, #dwarfSubRacialAbility, 
+#subElfSelect, #elfSubRacialAbility,
+#subGnomeSelect, #gnomeSubRacialAbility,
+#subDragonbornSelect, #dragonbornSubRacialAbility,
+#subHalflingSelect, #halflingSubRacialAbility,
+#subHumanSelect, #humanSubRacialAbility
+{
+    display : none;
+}
+
+.col-md-6
+{
+    display: inline-flex;
+    margin-bottom: 2%;
+}
+
+#raceSelect
+{
+    margin-top: 2%;
+}
+
+#raceImg
+{
+    float: left;
+    margin-right: 1%;
+    margin-top: 2%;
+}

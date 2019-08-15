@@ -1,0 +1,15 @@
+#featsBody
+{
+    display: none;
+}
+
+.col-md-6
+{
+    display: inline-flex;
+    margin-bottom: 2%;
+}
+
+#featSelect
+{
+    margin-top: 2%;
+}

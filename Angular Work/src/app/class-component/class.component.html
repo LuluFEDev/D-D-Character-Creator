@@ -1,0 +1,144 @@
+<div class="col-md-6">
+        <div class ="card" style="width: 100%"> 
+            <div id ="card-body">
+        <div>
+            <h2 class="card-header">Choose your class</h2>
+            <select onselect="announce()" id="classSelect" class="form-control">
+                <option id="blankSelect">
+                    --Class--
+                </option>
+                <option id="barbarianSelect">
+                    Barbarian
+                </option>
+                <option id="bardSelect">
+                    Bard
+                </option>
+                <option id="clericSelect">
+                    Cleric
+                </option>
+            </select>
+        </div>
+    
+        <div id="classDescription"></div>
+        <div id="classImgHolder">
+            <img id="classImg">
+        </div>
+        <div id="classItemProfs">
+            <h3 id = "itemProfsHeader">Item Proficiencies</h3>
+                <ul id="classItemProfsList">
+                </ul>
+        </div>
+        <div id="classSaveThrowProfs">
+            <h3 id = "saveThrowProfsHeader">Saving Throw Proficiencies</h3>
+            <ul id="classSaveThrowProfsList">
+            </ul>
+        </div>
+        <div id="skillProfs">
+            <h3 id = "skillProfsHeader">Skill Proficiencies</h3>
+            <span id="numberOfSkillsSpan">Please choose&nbsp; <p id="numberOfSkills"></p> &nbsp;skills</span>
+                <ul id="skillProfsList">
+                </ul>
+        </div>
+        <div id="hitDie"></div>
+        <h3 id = "levelSelectHeader">Choose your level</h3>
+        <select id="levelSelect" class="form-control">
+                <option id="blankLevel">
+                    --Level--
+                    </option>
+                <option id="firstLevel">
+                    1st Level
+                </option>
+                <option id="secondSelect">
+                    2nd Level
+                </option>
+                <option id="thirdSelect">
+                    3rd Level
+                </option>     
+                <option id="fourthSelect" data-toggle="modal" data-target="#exampleModel">
+                    4th Level
+                </option>   
+        </select>
+
+        <button type="button" data-toggle="modal" data-target="#exampleModal">Boop</button>
+        <div id="levelFeatures">
+            <ul id="levelFeaturesList">
+            </ul>
+            <ul id="incrementalFeatures">
+            </ul>
+         </div>
+
+         <div id ="subClass">
+            <h3 id = "subClassHeader"></h3>
+                <select id = "divineDomainSelect" class="form-control">
+                        <option id="blankDomain">
+                            --Divine Domain--
+                        </option>
+                        <option id="knowledgeDomain">
+                            Knowledge
+                        </option>
+                        <option id="lifeDomain">
+                            Life
+                        </option>
+                        <option id="lightDomain">
+                            Light
+                        </option>
+                        <option id="natureDomain">
+                            Nature
+                        </option>
+                        <option id="tempestDomain">
+                            Tempest
+                        </option>
+                        <option id="trickeryDomain">
+                            Trickery
+                        </option>
+                        <option id="warDomain">
+                            War
+                        </option>
+                </select>
+                <select id = "primalPathSelect" class="form-control">
+                        <option id="blankDomain">
+                        --Primal Path--
+                        </option>
+                        <option id="berserkerPath">
+                            Berserker
+                        </option>
+                        <option id="totemPath">
+                            Totem Warrior
+                        </option>
+
+                </select>
+        </div>
+        <div id="subClassDescription"></div>
+        <br>
+         <div id ="subClassFeatures">
+             <h3 id = "subClassFeaturesHeader"></h3>
+             <ul id ="subClassFeaturesList">
+             </ul>
+
+             <h3 id = "subClassSpellsHeader"></h3>
+             <ul id="subClassSpellsList">
+             </ul>
+         </div>
+</div>
+</div>
+</div>
+
+<div class="modal" id="exampleModal" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <p>Do you wish to take a feat or stat(s) upgrade</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>

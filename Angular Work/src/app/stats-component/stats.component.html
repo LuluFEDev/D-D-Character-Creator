@@ -1,0 +1,41 @@
+        <div class="col-md-6">
+            <div class ="card" style="width: 100%"> 
+                <div id ="card-body">
+                        <h2 class="card-header">Stats</h2>
+    <p id="statsDescription">Do you want to randomly generate stats or input user determined stats?</p>
+    <button class= "btn btn-outline-danger" id="randomButton" (click)="randomStats()">Random</button>
+    <button class= "btn btn-outline-danger" id="chooseButton" (click)="userStats()">User Determined</button>
+        <ul id="statsRandomList" class="statsRandomList">
+            <li class="statsList">Strength: <label class = "statRndLabel" id ="strRndLabel"> </label></li>
+            <li class="statsList">Dexterity: <label class = "statRndLabel" id ="dexRndLabel"> </label></li>
+            <li class="statsList">Constitution: <label class = "statRndLabel" id ="conRndLabel"> </label></li>
+            <li class="statsList">Intelligence: <label class = "statRndLabel" id ="intRndLabel"> </label></li>
+            <li class="statsList">Wisdom: <label class = "statRndLabel" id ="wisRndLabel"> </label></li>
+            <li class="statsList">Charisma: <label class = "statRndLabel" id ="chaRndLabel"> </label></li>
+        </ul>
+
+        <ul id="statsChooseList" class="statsChooseList">
+                <li class="statsList">Strength: <label class = "statLabel" id ="strLabel"> 
+                    <input type="number" id="strStat" min="4" max="18">
+                </label></li>
+                <li class="statsList">Dexterity: <label class = "statLabel" id ="dexLabel"> 
+                        <input type="number" id="dexStat" min="4" max="18">
+                </label></li>
+                <li class="statsList">Constitution: <label class = "statLabel" id ="conLabel"> 
+                        <input type="number" id="conStat" min="4" max="18">
+                </label></li>
+                <li class="statsList">Intelligence: <label class = "statLabel" id ="intLabel">
+                        <input type="number" id="intStat" min="4" max="18">
+                     </label></li>
+                <li class="statsList">Wisdom: <label class = "statLabel" id ="wisLabel"> 
+                        <input type="number" id="wisStat" min="4" max="18">
+                </label></li>
+                <li class="statsList">Charisma: <label class = "statLabel" id ="chaLabel"> 
+                        <input type="number" id="chaStat" min="4" max="18">
+                </label></li>
+                <button class="btn btn-outline-danger" id ="submitStatsBtn" (click)="submitUserStats()">Submit Stats</button>
+        </ul>
+    </div>
+</div>
+</div>
+    
