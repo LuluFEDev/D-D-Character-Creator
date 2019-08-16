@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from "@angular/core";
 import * as $ from 'jquery';
-import { BackgroundComponent } from "../background-component/background.component" 
+import { BackgroundComponent } from "../background-component/background.component"
 import { CharacterInformationComponent } from "../character-information-component/character-information.component";
 
 function cleanUpFeatures() {
@@ -19,8 +19,7 @@ function cleanUpSubClassFeatures() {
     $(levelSpells).empty();
 }
 
-function cleanUpSubClass()
-{
+function cleanUpSubClass() {
     document.getElementById('subClass').style.display = 'none';
 }
 
@@ -62,8 +61,7 @@ function cleanUp() {
     levelSelect.value = blankSelect;
 }
 
-function featPopUp()
-{
+function featPopUp() {
     // @ts-ignore
     $('#exampleModal').modal('show');
 }
@@ -210,16 +208,15 @@ export class ClassComponent implements OnInit {
                             var subClassSelect = $('#primalPathSelect :selected').val();
                             var levelSelect = $("#levelSelect :selected").val();
                             var subClassFeatures = document.getElementById('subClassFeaturesList');
-    
-                            if(levelSelect == "3rd Level") {
+
+                            if (levelSelect == "3rd Level") {
                                 if (subClassSelect == "Berserker") {
                                     cleanUpSubClassFeatures();
                                     var subClassText = document.getElementById('subClassDescription');
                                     subClassText.textContent = data.barbarian.thirdLevel.pathBerserkerDescription;
                                     var subClassHeader = document.getElementById('subClassFeaturesHeader');
                                     subClassHeader.textContent = 'Primal Path Features';
-                                    for(var i =0; i < data.barbarian.thirdLevel.pathBerserkerFeatures.length; i++)
-                                    {
+                                    for (var i = 0; i < data.barbarian.thirdLevel.pathBerserkerFeatures.length; i++) {
                                         var subClassFeature = document.createElement("li");
                                         subClassFeature.appendChild(document.createTextNode(data.barbarian.thirdLevel.pathBerserkerFeatures[i]));
                                         subClassFeatures.appendChild(subClassFeature);
@@ -232,8 +229,7 @@ export class ClassComponent implements OnInit {
                                     domainText.textContent = data.barbarian.thirdLevel.pathTotemDescription;
                                     var subClassHeader = document.getElementById('subClassFeaturesHeader');
                                     subClassHeader.textContent = 'Primal Path Features';
-                                    for(var i =0; i < data.barbarian.thirdLevel.pathTotemFeatures.length; i++)
-                                    {
+                                    for (var i = 0; i < data.barbarian.thirdLevel.pathTotemFeatures.length; i++) {
                                         var subClassFeature = document.createElement("li");
                                         subClassFeature.appendChild(document.createTextNode(data.barbarian.thirdLevel.pathTotemFeatures[i]));
                                         subClassFeatures.appendChild(subClassFeature);
@@ -425,9 +421,9 @@ export class ClassComponent implements OnInit {
                         var domainSelect = $('#divineDomainSelect :selected').val();
                         var levelSelect = $("#levelSelect :selected").val();
                         var domainFeatures = document.getElementById('subClassFeaturesList');
-                        var domainSpells = document.getElementById('subClassSpellsList');                        
+                        var domainSpells = document.getElementById('subClassSpellsList');
 
-                        if(levelSelect == "1st Level") {
+                        if (levelSelect == "1st Level") {
                             if (domainSelect == "Knowledge") {
                                 cleanUpSubClassFeatures();
                                 var domainText = document.getElementById('subClassDescription');
@@ -436,15 +432,13 @@ export class ClassComponent implements OnInit {
                                 subClassHeader.textContent = 'Divine Domain Features';
                                 var subClassSpellsHeader = document.getElementById('subClassSpellsHeader');
                                 subClassSpellsHeader.textContent = 'Divine Domain Spells';
-                                for(var i =0; i < data.cleric.firstLevel.knowledgeDomainFeatures.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.knowledgeDomainFeatures.length; i++) {
                                     var domainFeature = document.createElement("li");
                                     domainFeature.appendChild(document.createTextNode(data.cleric.firstLevel.knowledgeDomainFeatures[i]));
                                     domainFeatures.appendChild(domainFeature);
                                 }
 
-                                for(var i =0; i < data.cleric.firstLevel.knowledgeDomainSpells.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.knowledgeDomainSpells.length; i++) {
                                     var domainSpell = document.createElement("li");
                                     domainSpell.appendChild(document.createTextNode(data.cleric.firstLevel.knowledgeDomainSpells[i]));
                                     domainSpells.appendChild(domainSpell);
@@ -458,15 +452,13 @@ export class ClassComponent implements OnInit {
                                 subClassHeader.textContent = 'Divine Domain Features';
                                 var subClassSpellsHeader = document.getElementById('subClassSpellsHeader');
                                 subClassSpellsHeader.textContent = 'Divine Domain Spells';
-                                for(var i =0; i < data.cleric.firstLevel.lifeDomainFeatures.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.lifeDomainFeatures.length; i++) {
                                     var domainFeature = document.createElement("li");
                                     domainFeature.appendChild(document.createTextNode(data.cleric.firstLevel.lifeDomainFeatures[i]));
                                     domainFeatures.appendChild(domainFeature);
                                 }
 
-                                for(var i =0; i < data.cleric.firstLevel.lifeDomainSpells.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.lifeDomainSpells.length; i++) {
                                     var domainSpell = document.createElement("li");
                                     domainSpell.appendChild(document.createTextNode(data.cleric.firstLevel.lifeDomainSpells[i]));
                                     domainSpells.appendChild(domainSpell);
@@ -480,15 +472,13 @@ export class ClassComponent implements OnInit {
                                 subClassHeader.textContent = 'Divine Domain Features';
                                 var subClassSpellsHeader = document.getElementById('subClassSpellsHeader');
                                 subClassSpellsHeader.textContent = 'Divine Domain Spells';
-                                for(var i =0; i < data.cleric.firstLevel.lightDomainFeatures.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.lightDomainFeatures.length; i++) {
                                     var domainFeature = document.createElement("li");
                                     domainFeature.appendChild(document.createTextNode(data.cleric.firstLevel.lightDomainFeatures[i]));
                                     domainFeatures.appendChild(domainFeature);
                                 }
 
-                                for(var i =0; i < data.cleric.firstLevel.lightDomainSpells.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.lightDomainSpells.length; i++) {
                                     var domainSpell = document.createElement("li");
                                     domainSpell.appendChild(document.createTextNode(data.cleric.firstLevel.lightDomainSpells[i]));
                                     domainSpells.appendChild(domainSpell);
@@ -502,15 +492,13 @@ export class ClassComponent implements OnInit {
                                 subClassHeader.textContent = 'Divine Domain Features';
                                 var subClassSpellsHeader = document.getElementById('subClassSpellsHeader');
                                 subClassSpellsHeader.textContent = 'Divine Domain Spells';
-                                for(var i =0; i < data.cleric.firstLevel.natureDomainFeatures.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.natureDomainFeatures.length; i++) {
                                     var domainFeature = document.createElement("li");
                                     domainFeature.appendChild(document.createTextNode(data.cleric.firstLevel.natureDomainFeatures[i]));
                                     domainFeatures.appendChild(domainFeature);
                                 }
 
-                                for(var i =0; i < data.cleric.firstLevel.natureDomainSpells.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.natureDomainSpells.length; i++) {
                                     var domainSpell = document.createElement("li");
                                     domainSpell.appendChild(document.createTextNode(data.cleric.firstLevel.natureDomainSpells[i]));
                                     domainSpells.appendChild(domainSpell);
@@ -524,15 +512,13 @@ export class ClassComponent implements OnInit {
                                 subClassHeader.textContent = 'Divine Domain Features';
                                 var subClassSpellsHeader = document.getElementById('subClassSpellsHeader');
                                 subClassSpellsHeader.textContent = 'Divine Domain Spells';
-                                for(var i =0; i < data.cleric.firstLevel.tempestDomainFeatures.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.tempestDomainFeatures.length; i++) {
                                     var domainFeature = document.createElement("li");
                                     domainFeature.appendChild(document.createTextNode(data.cleric.firstLevel.tempestDomainFeatures[i]));
                                     domainFeatures.appendChild(domainFeature);
                                 }
 
-                                for(var i =0; i < data.cleric.firstLevel.tempestDomainSpells.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.tempestDomainSpells.length; i++) {
                                     var domainSpell = document.createElement("li");
                                     domainSpell.appendChild(document.createTextNode(data.cleric.firstLevel.tempestDomainSpells[i]));
                                     domainSpells.appendChild(domainSpell);
@@ -541,23 +527,21 @@ export class ClassComponent implements OnInit {
                             if (domainSelect == "Trickery") {
                                 cleanUpSubClassFeatures();
                                 var domainText = document.getElementById('subClassDescription');
-                                domainText.textContent = data.cleric.firstLevel.trickeryDomainDescription;                                var subClassHeader = document.getElementById('subClassFeaturesHeader');
+                                domainText.textContent = data.cleric.firstLevel.trickeryDomainDescription; var subClassHeader = document.getElementById('subClassFeaturesHeader');
                                 subClassHeader.textContent = 'Divine Domain Features';
                                 var subClassSpellsHeader = document.getElementById('subClassSpellsHeader');
                                 subClassSpellsHeader.textContent = 'Divine Domain Spells';
-                                for(var i =0; i < data.cleric.firstLevel.trickeryDomainFeatures.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.trickeryDomainFeatures.length; i++) {
                                     var domainFeature = document.createElement("li");
                                     domainFeature.appendChild(document.createTextNode(data.cleric.firstLevel.trickeryDomainFeatures[i]));
                                     domainFeatures.appendChild(domainFeature);
                                 }
 
-                                for(var i =0; i < data.cleric.firstLevel.trickeryDomainSpells.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.trickeryDomainSpells.length; i++) {
                                     var domainSpell = document.createElement("li");
                                     domainSpell.appendChild(document.createTextNode(data.cleric.firstLevel.trickeryDomainSpells[i]));
                                     domainSpells.appendChild(domainSpell);
-                                }                                   
+                                }
                             }
                             if (domainSelect == "War") {
                                 cleanUpSubClassFeatures();
@@ -567,15 +551,13 @@ export class ClassComponent implements OnInit {
                                 subClassHeader.textContent = 'Divine Domain Features';
                                 var subClassSpellsHeader = document.getElementById('subClassSpellsHeader');
                                 subClassSpellsHeader.textContent = 'Divine Domain Spells';
-                                for(var i =0; i < data.cleric.firstLevel.warDomainFeatures.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.warDomainFeatures.length; i++) {
                                     var domainFeature = document.createElement("li");
                                     domainFeature.appendChild(document.createTextNode(data.cleric.firstLevel.warDomainFeatures[i]));
                                     domainFeatures.appendChild(domainFeature);
                                 }
 
-                                for(var i =0; i < data.cleric.firstLevel.warDomainSpells.length; i++)
-                                {
+                                for (var i = 0; i < data.cleric.firstLevel.warDomainSpells.length; i++) {
                                     var domainSpell = document.createElement("li");
                                     domainSpell.appendChild(document.createTextNode(data.cleric.firstLevel.warDomainSpells[i]));
                                     domainSpells.appendChild(domainSpell);

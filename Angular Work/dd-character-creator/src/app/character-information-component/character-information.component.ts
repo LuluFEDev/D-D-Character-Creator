@@ -9,28 +9,23 @@ import * as $ from 'jquery';
     styleUrls: ['./character-information.component.css']
 })
 export class CharacterInformationComponent {
-    static printRace(race)
-    {
+    static printRace(race) {
         $("#raceArea").text(race);
     }
 
-    static printName(name)
-    {
+    static printName(name) {
         $("#nameArea").text(name);
     }
 
-    static printClass(classText)
-    {
+    static printClass(classText) {
         $("#classArea").text(classText);
     }
 
-    static printBackground(background)
-    {
+    static printBackground(background) {
         $("#backgroundArea").text(background);
     }
 
-    static printFeat(background)
-    {
+    static printFeat(background) {
         $("#backgroundArea").text(background);
     }
 }
