@@ -1,5 +1,5 @@
 import { DataService } from "../service-component/service.component";
-import { Component } from "../../../node_modules/@angular/core";
+import { Component } from "@angular/core";
 import * as $ from 'jquery';
 
 
