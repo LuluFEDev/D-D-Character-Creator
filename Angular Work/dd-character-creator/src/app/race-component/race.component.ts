@@ -1,6 +1,7 @@
 import { Component, Injectable, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import * as $ from 'jquery';
+import { dragonAncestryConstants } from '../helpers/helpers';
 import { CharacterInformationComponent } from "../character-information-component/character-information.component";
 import { StatsComponent } from "../stats-component/stats.component";
 import { FeatsComponent } from "../feats-component/feats.component";
@@ -26,6 +27,25 @@ function cleanUp() {
 
     var subRacialAbilities = document.getElementById("subRacialAbilitiesList");
     $(subRacialAbilities).empty();
+}
+
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+}
+
+function chooseDragonAcestry(colour, subRacialAbilities, data) {
+    // @ts-ignore
+    document.getElementById("raceImg").src = data.dragonborn[colour].imageURL;
+    if (document.getElementById("dragonbornSubRacialAbility") != null) {
+        $(subRacialAbilities).empty()
+    }
+
+    for (var i = 0; i < data.dragonborn[colour].racialAbilities.length; i++) {
+        var racialAbility = document.createElement("li");
+        racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
+        racialAbility.innerText = data.dragonborn[colour].racialAbilities[i];
+        $(racialAbility).appendTo(subRacialAbilities);
+    }
 }
 
 @Component({
@@ -330,146 +350,8 @@ export class RaceComponent implements OnInit {
 
                     $('#subDragonbornSelect').change(function () {
                         var subSelectText = $("#subDragonbornSelect :selected").val();
-                        if (subSelectText == "Black") {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.blackDragon.imageURL;
-
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-                            for (var i = 0; i < data.dragonborn.blackDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.blackDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'Blue') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.blueDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.blueDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.blueDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'Brass') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.brassDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.brassDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.brassDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'Bronze') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.bronzeDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.bronzeDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.bronzeDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'Copper') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.copperDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.copperDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.copperDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'Gold') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.goldDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.goldDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.goldDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'Green') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.greenDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.greenDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.greenDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'Red') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.redDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.redDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.redDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'Silver') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.silverDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.silverDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.silverDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
-                        if (subSelectText == 'White') {
-                            // @ts-ignore
-                            document.getElementById("raceImg").src = data.dragonborn.whiteDragon.imageURL;
-                            if (document.getElementById("dragonbornSubRacialAbility") != null) {
-                                $(subRacialAbilities).empty()
-                            }
-
-                            for (var i = 0; i < data.dragonborn.whiteDragon.racialAbilities.length; i++) {
-                                var racialAbility = document.createElement("li");
-                                racialAbility.setAttribute("id", "dragonbornSubRacialAbility");
-                                racialAbility.innerText = data.dragonborn.whiteDragon.racialAbilities[i];
-                                $(racialAbility).appendTo(subRacialAbilities);
-                            }
-                        }
+                        var colour = getKeyByValue(dragonAncestryConstants, subSelectText);
+                        chooseDragonAcestry(colour, subRacialAbilities, data);
                     });
                 }
 

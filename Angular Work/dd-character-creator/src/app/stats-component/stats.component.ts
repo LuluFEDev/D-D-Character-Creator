@@ -18,12 +18,11 @@ export class StatsComponent {
     static getStatsArray(): any {
         return this.globalStatsArray;
     }
-    constructor() {
-    }
 
     getStatsArray(): number[] {
         return StatsComponent.globalStatsArray;
     }
+    
     randomStats(): void {
         StatsComponent.randomStatsChosen = true;
         document.getElementById("statsRandomList").style.display = "block";
@@ -60,7 +59,6 @@ export class StatsComponent {
     }
 
     static updateStats(statModifiers): void {
-        console.log(statModifiers);
         for (var i = 0; i < StatsComponent.globalStatsArray.length; i++) {
             StatsComponent.statsArray[i] = statModifiers[i];
         }
@@ -88,7 +86,6 @@ export class StatsComponent {
         document.getElementById("randomButton").style.display = "none";
         document.getElementById("chooseButton").style.display = "none";
         document.getElementById("statsDescription").style.display = "none";
-
     }
 
     submitUserStats(): void {
@@ -100,23 +97,20 @@ export class StatsComponent {
         var intLabel = document.getElementById('intLabel');
         var chaLabel = document.getElementById('chaLabel');
         var currentValue;
-        var legitStats;
+        var legitStats = false;
         $('input[type="number"]').each(function () {
             currentValue = $(this).val();
             if (isNaN(currentValue)) {
                 alert("Please enter numbers into the fields");
-                legitStats = false;
                 return false;
 
             }
             else if (currentValue < 4 || currentValue > 18 || currentValue == 'e') {
                 alert("Please enter valid stat numbers (Between 4 and 18)");
-                legitStats = false;
                 return false;
             }
             else if (currentValue == "") {
                 alert("Please fill out all fields");
-                legitStats = false;
                 return false;
 
             }
@@ -124,7 +118,7 @@ export class StatsComponent {
                 legitStats = true;
             }
         })
-        if (legitStats == true) {
+        if (legitStats) {
             var strStatLabel = document.createElement("li");;
             strStatLabel.setAttribute("id", "strStatLabel");
             strStatLabel.setAttribute('class', 'statLabel');
@@ -184,7 +178,6 @@ export class StatsComponent {
             var chaStatNum = parseInt(StatsComponent.statsArray[5]);
             StatsComponent.globalStatsArray = [strStatNum, dexStatNum, conStatNum, intStatNum, wisStatNum, chaStatNum];
             StatsComponent.copyOfStatsArray = [strStatNum, dexStatNum, conStatNum, intStatNum, wisStatNum, chaStatNum];
-            console.log(StatsComponent.globalStatsArray);
         }
     }
 }
