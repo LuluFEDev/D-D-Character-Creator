@@ -1,7 +1,6 @@
-import { Component, Injectable, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
 import * as $ from 'jquery';
-import { dragonAncestryConstants } from '../helpers/helpers';
+import { dragonAncestryConstants, getKeyByValue } from '../helpers/helpers';
 import { CharacterInformationComponent } from "../character-information-component/character-information.component";
 import { StatsComponent } from "../stats-component/stats.component";
 import { FeatsComponent } from "../feats-component/feats.component";
@@ -27,10 +26,6 @@ function cleanUp() {
 
     var subRacialAbilities = document.getElementById("subRacialAbilitiesList");
     $(subRacialAbilities).empty();
-}
-
-function getKeyByValue(object, value) {
-    return Object.keys(object).find(key => object[key] === value);
 }
 
 function chooseDragonAcestry(colour, subRacialAbilities, data) {
